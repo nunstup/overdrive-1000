@@ -1,7 +1,7 @@
 /* OVERDRIVE 1000 v0.3: demo math, not certified. */
 (function(root){"use strict";
 const W=6,H=5,SCATTER=5,weights=[26,24,20,16,10,4],pays=[[.5,1,3,10],[.4,.8,2,8],[.3,.6,1.5,5],[.2,.4,1,3],[.1,.3,.8,2]],mults=[1,2,3,5,8,10];
-let payoutScale=0.387;
+let payoutScale=0.393;
 function random(){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]/4294967296}
 function pick(){let n=random()*weights.reduce((a,b)=>a+b,0);for(let i=0;i<weights.length;i++){n-=weights[i];if(n<0)return i}return weights.length-1}
 function newGrid(){return Array.from({length:H},()=>Array.from({length:W},pick))}
